@@ -10,7 +10,7 @@ public class JPAUtils {
         if (ENTITY_MANAGER_FACTORY==null)
             synchronized (JPAUtils.class){
                 if (ENTITY_MANAGER_FACTORY==null)
-                    ENTITY_MANAGER_FACTORY = Persistence.createEntityManagerFactory("projectunit");
+                    ENTITY_MANAGER_FACTORY = Persistence.createEntityManagerFactory("HIJODEPUTA");
             }
     }
     public static EntityManager getEntityManager(){
