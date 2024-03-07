@@ -12,15 +12,20 @@ import java.io.IOException;
 public class App extends Application {
     @Override
     public void start(Stage stage) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource("hello-view.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(), 320, 240);
-        stage.setTitle("Hello!");
+//        FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource("user_info.fxml"));
+//        Scene scene = new Scene(fxmlLoader.load(), 600, 300);
+//        stage.setTitle("USER_INFO");
+//        stage.setScene(scene);
+//        stage.show();
+        FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource("start_view.fxml"));
+        Scene scene = new Scene(fxmlLoader.load(), 600, 300);
+        stage.setTitle("USER_INFO");
         stage.setScene(scene);
         stage.show();
     }
 
     public static void main(String[] args) {
-        EntityManager em = JPAUtils.getEntityManager();
+        //EntityManager em = JPAUtils.getEntityManager();
         launch();
     }
 }

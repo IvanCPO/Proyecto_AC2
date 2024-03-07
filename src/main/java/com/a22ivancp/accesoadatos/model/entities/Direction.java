@@ -14,4 +14,5 @@ public class Direction {
     private String province;
     private String city;
     private String door;
+    private int cp;
 }
