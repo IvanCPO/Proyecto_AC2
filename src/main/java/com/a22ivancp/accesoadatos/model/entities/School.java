@@ -24,4 +24,7 @@ public class School {
     joinColumns = @JoinColumn(name = "idSchool"),
     inverseJoinColumns = @JoinColumn(name = "idTitle"))
     private List<Title> titles;
+    @OneToOne
+    @JoinColumn(name = "idDireccion")
+    private Direction direction;
 }

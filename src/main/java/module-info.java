@@ -4,6 +4,7 @@ module com.a22ivancp.accesoadatos {
     requires jakarta.persistence;
 
     requires org.hibernate.orm.core;
+    requires lombok;
 
     opens com.a22ivancp.accesoadatos.model.entities to org.hibernate.orm.core;
 

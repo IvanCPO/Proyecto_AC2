@@ -11,7 +11,7 @@ public class Student {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(length = 4)
-    private int idStudent;
+    private Integer idStudent;
     private String name;
     private String surname;
     private String gmail;
@@ -22,17 +22,17 @@ public class Student {
     @OneToOne
     @JoinColumn(name = "idDireccion")
     private Direction direction;
-    @ManyToOne
-    @JoinColumn(name = "idSchool")
-    private School school;
-    @ManyToOne
-    @JoinColumn(name = "IdTitle")
-    private Title actualTitle;
-    @ManyToMany
-    @JoinTable(name = "Student_Titles",
-    joinColumns = @JoinColumn(name = "idStudent"),
-    inverseJoinColumns = @JoinColumn(name = "idTitles"))
-    private List<Title> titles;
+//    @ManyToOne
+//    @JoinColumn(name = "IdTitle")
+//    private Title actualTitle;
+//    @ManyToMany
+//    @JoinTable(name = "StudentTitles",
+//    joinColumns = @JoinColumn(name = "idStudent"),
+//    inverseJoinColumns = @JoinColumn(name = "idTitles"))
+//    private List<Title> titles;
+
+    @OneToMany(mappedBy = "student")
+    private List<StudentTitles> titles;
 
 }
 

@@ -11,9 +11,15 @@ public class Title {
     private Integer idTitle;
     private String abbreviation;
     private String name;
-    private int duratiom;
+    private int duration;
 
     @ManyToMany
-    private List<String> subjects;
+    @JoinTable(name = "Title_Subjects",
+    joinColumns = @JoinColumn(name = "idTitle"),
+    inverseJoinColumns = @JoinColumn(name = "idSubject"))
+    private List<Subject> subjects;
+//
+//    @OneToMany(mappedBy = "title")
+//    private List<StudentTitles> students;
 
 }

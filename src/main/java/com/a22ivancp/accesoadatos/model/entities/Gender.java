@@ -2,9 +2,9 @@ package com.a22ivancp.accesoadatos.model.entities;
 
 public enum Gender {
     MALE("HOMBRE"), FEMALE("MUJER"), NO_BINARY("HELICOPTERO");
-    private String nombre;
+    private String name;
     private Gender(String nombre){
-        this.nombre=nombre;
+        this.name=nombre;
     }
     public static Gender detectGenere(String nombre){
         switch (nombre){
