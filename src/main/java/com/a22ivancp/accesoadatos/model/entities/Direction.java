@@ -1,9 +1,6 @@
 package com.a22ivancp.accesoadatos.model.entities;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -21,6 +18,7 @@ public class Direction {
     private String country;
     private String province;
     private String city;
+    private String street;
     private String door;
-    private int cp;
+    private Integer cp;
 }

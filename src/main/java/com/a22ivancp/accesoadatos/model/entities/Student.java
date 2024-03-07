@@ -31,12 +31,13 @@ public class Student {
     @Column(length = 9)
     private int number;
     @Column(length = 9)
-    private int dni;
-    @Enumerated
+    private String dni;
+    @Enumerated(EnumType.STRING)
+    @Column(length = 9)
     private Gender gender;
     private LocalDate dateNac;
     @OneToOne
-    @JoinColumn(name = "idDireccion")
+    @JoinColumn(name = "idDireccion",nullable = true)
     private Direction direction;
 
     @OneToMany(mappedBy = "student")

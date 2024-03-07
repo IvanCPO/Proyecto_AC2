@@ -22,7 +22,7 @@ public class School {
     private String director;
     private String urlSchool;
     private String gmail;
-    private int mobilePhoneNumber;
+    private Integer mobilePhoneNumber;
     @ManyToMany
     @JoinTable (name = "Matriculados",
     joinColumns = @JoinColumn(name = "idCentro"),

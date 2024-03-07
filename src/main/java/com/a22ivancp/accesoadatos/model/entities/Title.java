@@ -16,13 +16,13 @@ public class Title {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer idTitle;
-    @Column (length = 5)
+    @Column (length = 10)
     private String abbreviation;
-    @Column (length = 50)
+    @Column (length = 150)
     private String name;
 
-    @Column(length = 4)
-    private double duration;
+    @Column(length = 2)
+    private Integer duration;
 
     //Lista para almacenar los cursos del alumno, acompañado con con sus respectivas asignaturas
     @OneToMany ( mappedBy = "title" )
@@ -32,7 +32,7 @@ public class Title {
     @OneToMany(mappedBy = "title")
     private List<StudentTitles> students;
 
-    public Title(String abbreviation, String name, double duration, List<Course> courses, List<StudentTitles> students) {
+    public Title(String abbreviation, String name, Integer duration, List<Course> courses, List<StudentTitles> students) {
         this.abbreviation = abbreviation;
         this.name = name;
         this.duration = duration;
@@ -40,7 +40,7 @@ public class Title {
         this.students = students;
     }
 
-    public Title(String abbreviation, String name, double duration) {
+    public Title(String abbreviation, String name, Integer duration) {
         this.abbreviation = abbreviation;
         this.name = name;
         this.duration = duration;
