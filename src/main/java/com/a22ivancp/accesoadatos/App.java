@@ -25,7 +25,7 @@ public class App extends Application {
     }
 
     public static void main(String[] args) {
-        //EntityManager em = JPAUtils.getEntityManager();
+        EntityManager em = JPAUtils.getEntityManager();
         launch();
     }
 }
