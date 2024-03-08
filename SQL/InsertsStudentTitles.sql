@@ -86,7 +86,7 @@ VALUES (14, 3, FALSE, 2022, 2020), -- Bachillerato en Humanidades
 -- Sara
 INSERT INTO PUBLIC."StudentTitles" ("idStudent", "idTitle", "isNow", "yearEnd", "yearStart") 
 VALUES (15, 1, FALSE, 2021, 2019), -- Bachillerato en Ciencias
-       (15, 6, TRUE, NULL, 2024),   -- Técnico en Cocina y Gastronomía (Presencial)
+       (15, 6, TRUE, NULL, 2024);   -- Técnico en Cocina y Gastronomía (Presencial)
 
 -- Lucía
 INSERT INTO PUBLIC."StudentTitles" ("idStudent", "idTitle", "isNow", "yearEnd", "yearStart") 
@@ -96,7 +96,7 @@ VALUES (16, 6, FALSE, 2020, 2018), -- Técnico en Cocina y Gastronomía (Presenc
 -- Pablo
 INSERT INTO PUBLIC."StudentTitles" ("idStudent", "idTitle", "isNow", "yearEnd", "yearStart") 
 VALUES (17, 7, FALSE, 2022, 2020), -- Grado en Ingeniería Informática (Formación Dual)
-       (17, 4, TRUE, NULL, 2024),   -- Técnico Superior en Desarrollo de Aplicaciones Multiplataforma (Online)
+       (17, 4, TRUE, NULL, 2024);   -- Técnico Superior en Desarrollo de Aplicaciones Multiplataforma (Online)
 
 -- Laura
 INSERT INTO PUBLIC."StudentTitles" ("idStudent", "idTitle", "isNow", "yearEnd", "yearStart") 

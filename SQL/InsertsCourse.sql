@@ -19,13 +19,13 @@ INSERT INTO PUBLIC."Course" ("course", "idSubject", "idTitle")
 VALUES 
   (1, 10, 2), -- Fundamentos de Programación (1º Grado)
   (1, 11, 2), -- Matemáticas para la Computación (1º Grado)
-  (1, 12, 2), -- Estructuras de Datos (1º Grado)
+  (1, 12, 2); -- Estructuras de Datos (1º Grado)
 
 INSERT INTO PUBLIC."Course" ("course", "idSubject", "idTitle") 
 VALUES 
   (2, 13, 2), -- Bases de Datos (2º Grado)
   (2, 14, 2), -- Redes de Computadores (2º Grado)
-  (2, 15, 2), -- Sistemas Operativos (2º Grado)
+  (2, 15, 2); -- Sistemas Operativos (2º Grado)
 
 INSERT INTO PUBLIC."Course" ("course", "idSubject", "idTitle") 
 VALUES 
@@ -69,7 +69,7 @@ VALUES
 INSERT INTO PUBLIC."Course" ("course", "idSubject", "idTitle") 
 VALUES 
   (1, 31, 6), -- Operaciones Básicas de Cocina (1º Técnico Cocina y Gastronomía Presencial)
-  (1, 32, 6), -- Elaboraciones Básicas de Repostería y Pastelería (1º Técnico Cocina y Gastronomía Presencial)
+  (1, 32, 6); -- Elaboraciones Básicas de Repostería y Pastelería (1º Técnico Cocina y Gastronomía Presencial)
 
 INSERT INTO PUBLIC."Course" ("course", "idSubject", "idTitle") 
 VALUES 
@@ -80,7 +80,7 @@ VALUES
 INSERT INTO PUBLIC."Course" ("course", "idSubject", "idTitle") 
 VALUES 
   (1, 35, 7), -- Programación en Entorno Cliente (1º Desarrollo de Aplicaciones Web)
-  (1, 36, 7), -- Programación en Entorno Servidor (1º Desarrollo de Aplicaciones Web)
+  (1, 36, 7); -- Programación en Entorno Servidor (1º Desarrollo de Aplicaciones Web)
 
 INSERT INTO PUBLIC."Course" ("course", "idSubject", "idTitle") 
 VALUES 

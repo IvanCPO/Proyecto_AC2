@@ -24,17 +24,23 @@ public class DAODirection implements DAO<Direction> {
 
     @Override
     public void addElement(Direction object) {
+        em.getTransaction().begin();
         em.persist(object);
+        em.getTransaction().commit();
     }
 
     @Override
     public void updateElement(Direction object) {
+        em.getTransaction().begin();
         em.merge(object);
+        em.getTransaction().commit();
     }
 
     @Override
     public void removeElement(Direction object) {
+        em.getTransaction().begin();
         em.remove(object);
+        em.getTransaction().commit();
     }
 
     @Override
@@ -42,7 +48,10 @@ public class DAODirection implements DAO<Direction> {
         List<Direction> list = getAll();
         for (Direction element : list){
             if (element.getIdDirection().equals(id)){
+                em.getTransaction().begin();
                 em.remove(element);
+                em.getTransaction().commit();
+                break;
             }
         }
     }

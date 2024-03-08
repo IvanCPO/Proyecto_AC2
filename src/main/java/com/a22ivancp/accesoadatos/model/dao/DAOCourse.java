@@ -24,17 +24,23 @@ public class DAOCourse implements DAO<Course>{
 
     @Override
     public void addElement(Course object) {
+        em.getTransaction().begin();
         em.persist(object);
+        em.getTransaction().commit();
     }
 
     @Override
     public void updateElement(Course object) {
+        em.getTransaction().begin();
         em.merge(object);
+        em.getTransaction().commit();
     }
 
     @Override
     public void removeElement(Course object) {
+        em.getTransaction().begin();
         em.remove(object);
+        em.getTransaction().commit();
     }
 
     @Override
@@ -42,7 +48,10 @@ public class DAOCourse implements DAO<Course>{
         List<Course> list = getAll();
         for (Course element : list){
             if (element.getKey().equals(id)){
+                em.getTransaction().begin();
                 em.remove(element);
+                em.getTransaction().commit();
+                break;
             }
         }
     }

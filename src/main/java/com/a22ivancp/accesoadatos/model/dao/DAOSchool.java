@@ -24,17 +24,23 @@ public class DAOSchool implements DAO<School> {
 
     @Override
     public void addElement(School object) {
+        em.getTransaction().begin();
         em.persist(object);
+        em.getTransaction().commit();
     }
 
     @Override
     public void updateElement(School object) {
+        em.getTransaction().begin();
         em.merge(object);
+        em.getTransaction().commit();
     }
 
     @Override
     public void removeElement(School object) {
+        em.getTransaction().begin();
         em.remove(object);
+        em.getTransaction().commit();
     }
 
     @Override
@@ -42,7 +48,10 @@ public class DAOSchool implements DAO<School> {
         List<School> list = getAll();
         for (School element : list){
             if (element.getIdSchool().equals(id)){
+                em.getTransaction().begin();
                 em.remove(element);
+                em.getTransaction().commit();
+                break;
             }
         }
     }

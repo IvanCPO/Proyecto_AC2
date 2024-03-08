@@ -24,17 +24,23 @@ public class DAOStudentTitle implements DAO<StudentTitles> {
 
     @Override
     public void addElement(StudentTitles object) {
+        em.getTransaction().begin();
         em.persist(object);
+        em.getTransaction().commit();
     }
 
     @Override
     public void updateElement(StudentTitles object) {
+        em.getTransaction().begin();
         em.merge(object);
+        em.getTransaction().commit();
     }
 
     @Override
     public void removeElement(StudentTitles object) {
+        em.getTransaction().begin();
         em.remove(object);
+        em.getTransaction().commit();
     }
 
     @Override
@@ -42,7 +48,10 @@ public class DAOStudentTitle implements DAO<StudentTitles> {
         List<StudentTitles> list = getAll();
         for (StudentTitles element : list){
             if (element.getId().equals(id)){
+                em.getTransaction().begin();
                 em.remove(element);
+                em.getTransaction().commit();
+                break;
             }
         }
     }

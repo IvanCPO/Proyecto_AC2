@@ -24,17 +24,23 @@ public class DAOSubject implements DAO<Subject> {
 
     @Override
     public void addElement(Subject object) {
+        em.getTransaction().begin();
         em.persist(object);
+        em.getTransaction().commit();
     }
 
     @Override
     public void updateElement(Subject object) {
+        em.getTransaction().begin();
         em.merge(object);
+        em.getTransaction().commit();
     }
 
     @Override
     public void removeElement(Subject object) {
+        em.getTransaction().begin();
         em.remove(object);
+        em.getTransaction().commit();
     }
 
     @Override
@@ -42,7 +48,10 @@ public class DAOSubject implements DAO<Subject> {
         List<Subject> list = getAll();
         for (Subject subject : list){
             if (subject.getIdSubject().equals(id)){
+                em.getTransaction().begin();
                 em.remove(subject);
+                em.getTransaction().commit();
+                break;
             }
         }
     }

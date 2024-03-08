@@ -17,8 +17,8 @@ public class App extends Application {
 //        stage.setTitle("USER_INFO");
 //        stage.setScene(scene);
 //        stage.show();
-        FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource("start_view.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(), 600, 300);
+        FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource("user_info.fxml"));
+        Scene scene = new Scene(fxmlLoader.load(), 800, 300);
         stage.setTitle("USER_INFO");
         stage.setScene(scene);
         stage.show();
