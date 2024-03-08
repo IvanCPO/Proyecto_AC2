@@ -17,15 +17,15 @@ public class App extends Application {
 //        stage.setTitle("USER_INFO");
 //        stage.setScene(scene);
 //        stage.show();
-        FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource("user_info.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource("start_view.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 800, 300);
-        stage.setTitle("USER_INFO");
+        stage.setTitle("INICIO");
         stage.setScene(scene);
         stage.show();
     }
 
     public static void main(String[] args) {
-        EntityManager em = JPAUtils.getEntityManager();
+        //EntityManager em = JPAUtils.getEntityManager();
         launch();
     }
 }

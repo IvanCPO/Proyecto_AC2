@@ -27,6 +27,7 @@ public class Student {
     @Column(length = 60)
     private String gmail;
     @Lob
+    @Basic(fetch = FetchType.LAZY)
     private byte[] picture;
     @Column(length = 9)
     private int number;
