@@ -185,6 +185,8 @@ public class Controller implements Initializable{
             fxmlLoader.setLocation(getClass().getResource("user_info.fxml"));
         if (dto.getClass().equals(DTOSchool.class))
             fxmlLoader.setLocation(getClass().getResource("school_info.fxml"));
+        if (dto.getClass().equals(DTOTitle.class))
+            fxmlLoader.setLocation(getClass().getResource("title_info.fxml"));
         try {
             dialog.getDialogPane().setContent(fxmlLoader.load());
         } catch (IOException e) {
@@ -206,9 +208,8 @@ public class Controller implements Initializable{
 
         if (result.isPresent() && result.get() == ButtonType.OK) {
             System.out.println("OKAY pressed");
-//            DTO object = controller.procesarResultado();
-//            if (object!=null)
-//            listViewTarea.getSelectionModel().select(tarefa);
+            controller.procesarResultado();
+
         } else {
             System.out.println("Cancel pressed");
         }

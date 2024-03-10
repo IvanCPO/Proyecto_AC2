@@ -17,34 +17,34 @@
   <HBox>
     <GridPane alignment="CENTER" hgap="20" vgap="15"  >
       <Label text="Name:" GridPane.columnIndex="0" GridPane.rowIndex="0" />
-      <TextField GridPane.columnIndex="1" GridPane.rowIndex="0" />
+      <TextField GridPane.columnIndex="1" GridPane.rowIndex="0" fx:id="name"/>
 
       <Label text="Director:" GridPane.columnIndex="2" GridPane.rowIndex="0" />
-      <TextField GridPane.columnIndex="3" GridPane.fillWidth="2" GridPane.rowIndex="0" />
+      <TextField GridPane.columnIndex="3" GridPane.fillWidth="2" GridPane.rowIndex="0" fx:id="director"/>
 
       <Label text="Url School:" GridPane.columnIndex="0" GridPane.rowIndex="1" />
-      <TextField GridPane.columnIndex="1" GridPane.rowIndex="1" />
+      <TextField GridPane.columnIndex="1" GridPane.rowIndex="1" fx:id="url" />
 
       <Label text="Gmail:" GridPane.columnIndex="2" GridPane.rowIndex="1" />
-      <TextField GridPane.columnIndex="3" GridPane.rowIndex="1" />
+      <TextField GridPane.columnIndex="3" GridPane.rowIndex="1" fx:id="gmail" />
 
       <Label text="Mobile Phone Number:" GridPane.columnIndex="4" GridPane.rowIndex="1" />
-      <TextField GridPane.columnIndex="5" GridPane.rowIndex="1" />
+      <TextField GridPane.columnIndex="5" GridPane.rowIndex="1" fx:id="phone"/>
 
       <Label text="Country:" GridPane.columnIndex="0" GridPane.rowIndex="3" />
-      <TextField GridPane.columnIndex="1" GridPane.rowIndex="3" />
+      <TextField GridPane.columnIndex="1" GridPane.rowIndex="3" fx:id="country" />
 
       <Label text="Province:" GridPane.columnIndex="2" GridPane.rowIndex="3" />
-      <TextField GridPane.columnIndex="3" GridPane.rowIndex="3" />
+      <TextField GridPane.columnIndex="3" GridPane.rowIndex="3" fx:id="province" />
 
       <Label text="City:" GridPane.columnIndex="0" GridPane.rowIndex="4" />
-      <TextField GridPane.columnIndex="1" GridPane.rowIndex="4" />
+      <TextField GridPane.columnIndex="1" GridPane.rowIndex="4" fx:id="city"/>
 
       <Label text="Street:" GridPane.columnIndex="2" GridPane.rowIndex="4" />
-      <TextField GridPane.columnIndex="3" GridPane.rowIndex="4" />
+      <TextField GridPane.columnIndex="3" GridPane.rowIndex="4" fx:id="street"/>
 
       <Label text="CP:" GridPane.columnIndex="4" GridPane.rowIndex="4" />
-      <TextField GridPane.columnIndex="5" GridPane.rowIndex="4" />
+      <TextField GridPane.columnIndex="5" GridPane.rowIndex="4" fx:id="cp"/>
 
     </GridPane>
   </HBox>
@@ -53,21 +53,19 @@
       <Label text="LISTA DE TITULOS:"/>
       <HBox>
         <ListView fx:id="listTitles"/>
-        <VBox>
-          <Button text="Add" />
-          <Button text="Edit" />
-          <Button text="Remove" />
-        </VBox>
+<!--        <VBox>-->
+<!--          <Button text="Add" />-->
+<!--          <Button text="Remove" />-->
+<!--        </VBox>-->
       </HBox>
     </VBox>
     <VBox>
       <Label text="LISTA DE ESTUDIANTES:"/>
       <HBox>
-        <VBox>
-          <Button text="Add" />
-          <Button text="Edit" />
-          <Button text="Remove" />
-        </VBox>
+<!--        <VBox>-->
+<!--          <Button text="Add" />-->
+<!--          <Button text="Remove" />-->
+<!--        </VBox>-->
         <ListView fx:id="listStudents"/>
       </HBox>
     </VBox>

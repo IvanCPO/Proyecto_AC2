@@ -2,7 +2,13 @@ package com.a22ivancp.accesoadatos.model.dao;
 
 import com.a22ivancp.accesoadatos.model.JPAUtils;
 import com.a22ivancp.accesoadatos.model.dto.DTOSchool;
+import com.a22ivancp.accesoadatos.model.dto.DTOStudent;
+import com.a22ivancp.accesoadatos.model.dto.DTOTitle;
+import com.a22ivancp.accesoadatos.model.dto.DTOUserTitle;
 import com.a22ivancp.accesoadatos.model.entities.School;
+import com.a22ivancp.accesoadatos.model.entities.Student;
+import com.a22ivancp.accesoadatos.model.entities.StudentTitles;
+import com.a22ivancp.accesoadatos.model.entities.Title;
 import jakarta.persistence.EntityManager;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -62,6 +68,20 @@ public class DAOSchool implements DAO<School> {
         ObservableList<DTOSchool> list = FXCollections.observableArrayList();
         for (School school : schools){
             list.add(new DTOSchool(school));
+        }
+        return list;
+    }
+    public ObservableList<DTOTitle> getAllTitles(School school){
+        ObservableList<DTOTitle> list = FXCollections.observableArrayList();
+        for (Title title : school.getTitles()){
+            list.add(new DTOTitle(title));
+        }
+        return list;
+    }
+    public ObservableList<DTOStudent> getAllStudents(School school){
+        ObservableList<DTOStudent> list = FXCollections.observableArrayList();
+        for (Student student : school.getEnrolled()){
+            list.add(new DTOStudent(student));
         }
         return list;
     }

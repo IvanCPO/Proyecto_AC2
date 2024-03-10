@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.VBox?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.TableView?>
+
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.ListView?>
+<VBox alignment="CENTER" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/17.0.2-ea" fx:controller="com.a22ivancp.accesoadatos.ControllerTitle">
+  <HBox>
+    <GridPane alignment="CENTER" hgap="20" vgap="15"  >
+      <Label text="Name:" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+      <TextField GridPane.columnIndex="1" GridPane.rowIndex="0" fx:id="name"/>
+
+      <Label text="Abbreviation:" GridPane.columnIndex="2" GridPane.rowIndex="0" />
+      <TextField GridPane.columnIndex="3" GridPane.fillWidth="2" GridPane.rowIndex="0" fx:id="abbreviation"/>
+
+      <Label text="Duration:" GridPane.columnIndex="4" GridPane.rowIndex="0" />
+      <TextField GridPane.columnIndex="5" GridPane.rowIndex="0" fx:id="duration" />
+
+    </GridPane>
+  </HBox>
+  <VBox alignment="CENTER" >
+      <Label text="LISTA DE ASIGNATURAS:"/>
+      <HBox alignment="CENTER" spacing="20">
+        <ListView fx:id="listSubject" prefWidth="500"/>
+<!--        <VBox>-->
+<!--          <Button text="Add" />-->
+<!--          <Button text="Remove" />-->
+<!--        </VBox>-->
+      </HBox>
+  </VBox>
+</VBox>

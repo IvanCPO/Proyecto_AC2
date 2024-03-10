@@ -1,9 +1,12 @@
 package com.a22ivancp.accesoadatos;
 
+import com.a22ivancp.accesoadatos.model.dao.DAODirection;
 import com.a22ivancp.accesoadatos.model.dao.DAOStudent;
 import com.a22ivancp.accesoadatos.model.dto.DTO;
 import com.a22ivancp.accesoadatos.model.dto.DTOUserTitle;
+import com.a22ivancp.accesoadatos.model.entities.Direction;
 import com.a22ivancp.accesoadatos.model.entities.Gender;
+import com.a22ivancp.accesoadatos.model.entities.School;
 import com.a22ivancp.accesoadatos.model.entities.Student;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -48,6 +51,7 @@ public class ControllerUser implements Initializable , IControllerObjects{
     private ListView<DTOUserTitle> listTitles;
 
     private Student student;
+    private DAOStudent dao = new DAOStudent();
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -57,10 +61,10 @@ public class ControllerUser implements Initializable , IControllerObjects{
 
     @Override
     public void setData(DTO dto) {
+        genderOption.getItems().addAll(Gender.FEMALE, Gender.MALE, Gender.NO_BINARY);
         if (dto.getId()==null) {
             student= new Student();
         } else {
-            DAOStudent dao = new DAOStudent();
             student = dao.getByID(dto.getId());
             Image image;
             if (student.getPicture() == null)
@@ -71,7 +75,7 @@ public class ControllerUser implements Initializable , IControllerObjects{
             textName.setText(student.getName());
             textSurname.setText(student.getSurname());
             dateBirth.editorProperty().getValue().setText(student.getDateNac().format(DateTimeFormatter.ofPattern("d/M/yyyy")));
-            genderOption.getItems().addAll(Gender.FEMALE, Gender.MALE, Gender.NO_BINARY);
+
             genderOption.getSelectionModel().select(student.getGender());
             textDNI.setText(student.getDni());
             textGmail.setText(student.getGmail());
@@ -86,5 +90,37 @@ public class ControllerUser implements Initializable , IControllerObjects{
 
             listTitles.setItems(dao.getAllDTOUserTitles(student));
         }
+    }
+
+    @Override
+    public void procesarResultado() {
+        Student sc = student;
+        sc.setName(textName.getText());
+        sc.setSurname(textSurname.getText());
+        sc.setDateNac(dateBirth.getValue());
+        sc.setGender(genderOption.getValue());
+        sc.setDni(textDNI.getText());
+        sc.setGmail(textGmail.getText());
+        sc.setNumber(Integer.parseInt(textPhone.getText()));
+        if (sc.getDirection()==null) {
+            Direction d = new Direction();
+            DAODirection daoDirection = new DAODirection();
+            daoDirection.addElement(d);
+            for (Direction direction : daoDirection.getAll())
+                if (direction.getCountry()==null){
+                    d = direction;
+                    break;
+                }
+            sc.setDirection(d);
+        }
+        sc.getDirection().setCountry(country.getText());
+        sc.getDirection().setProvince(province.getText());
+        sc.getDirection().setCity(city.getText());
+        sc.getDirection().setStreet(street.getText());
+        sc.getDirection().setDoor(door.getText());
+        if (student.getIdStudent()==null)
+            dao.addElement(sc);
+        else
+            dao.updateElement(sc);
     }
 }
