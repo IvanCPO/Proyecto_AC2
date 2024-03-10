@@ -2,7 +2,6 @@ package com.a22ivancp.accesoadatos.model.dao;
 
 import com.a22ivancp.accesoadatos.model.JPAUtils;
 import com.a22ivancp.accesoadatos.model.entities.Direction;
-import com.a22ivancp.accesoadatos.model.entities.School;
 import jakarta.persistence.EntityManager;
 
 import java.util.List;
@@ -19,7 +18,7 @@ public class DAODirection implements DAO<Direction> {
 
     @Override
     public List<Direction> getAll() {
-        return em.createQuery("SELECT * FROM Direction", Direction.class).getResultList();
+        return em.createQuery("SELECT d FROM Direction d", Direction.class).getResultList();
     }
 
     @Override

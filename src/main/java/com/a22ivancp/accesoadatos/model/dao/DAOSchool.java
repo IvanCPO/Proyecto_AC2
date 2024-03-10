@@ -1,9 +1,11 @@
 package com.a22ivancp.accesoadatos.model.dao;
 
 import com.a22ivancp.accesoadatos.model.JPAUtils;
+import com.a22ivancp.accesoadatos.model.dto.DTOSchool;
 import com.a22ivancp.accesoadatos.model.entities.School;
-import com.a22ivancp.accesoadatos.model.entities.Student;
 import jakarta.persistence.EntityManager;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 
 import java.util.List;
 
@@ -19,7 +21,7 @@ public class DAOSchool implements DAO<School> {
 
     @Override
     public List<School> getAll() {
-        return em.createQuery("SELECT * FROM School", School.class).getResultList();
+        return em.createQuery("SELECT s FROM School s", School.class).getResultList();
     }
 
     @Override
@@ -54,5 +56,13 @@ public class DAOSchool implements DAO<School> {
                 break;
             }
         }
+    }
+    public ObservableList<DTOSchool> getAllDTOSchool(){
+        List<School> schools = getAll();
+        ObservableList<DTOSchool> list = FXCollections.observableArrayList();
+        for (School school : schools){
+            list.add(new DTOSchool(school));
+        }
+        return list;
     }
 }

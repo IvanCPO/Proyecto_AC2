@@ -11,50 +11,36 @@
   <top>
     <MenuBar>
       <Menu text="Menu">
-        <Menu text="New...">
-          <MenuItem text="Student" />
-          <MenuItem text="School" />
-          <MenuItem text="Title" />
-        </Menu>
+<!--        <Menu text="New...">-->
+<!--          <MenuItem text="Student" />-->
+<!--          <MenuItem text="School" />-->
+<!--          <MenuItem text="Title" />-->
+<!--        </Menu>-->
         <SeparatorMenuItem />
-        <MenuItem text="Exit" />
+        <MenuItem text="Exit" onAction="#closeApp"/>
       </Menu>
     </MenuBar>
   </top>
   <center>
-    <TabPane>
+    <TabPane fx:id="tabObjects">
       <tabs>
         <Tab closable="false" text="Estudiantes">
-          <HBox>
-            <TableView fx:id="tableStudent"/>
-            <VBox>
-              <Button text="Add" />
-              <Button text="Edit" />
-              <Button text="Remove" />
-            </VBox>
-          </HBox>
+          <TableView fx:id="tableStudent" editable="false" prefWidth="500"/>
         </Tab>
         <Tab closable="false" text="Escuelas">
-          <HBox>
-            <TableView fx:id="tableSchool"/>
-            <VBox>
-              <Button text="Add" />
-              <Button text="Edit" />
-              <Button text="Remove" />
-            </VBox>
-          </HBox>
+          <TableView fx:id="tableSchool" editable="false" prefWidth="500"/>
         </Tab>
         <Tab closable="false" text="Titulos">
-          <HBox>
-            <ListView fx:id="listTitle"/>
-            <VBox>
-              <Button text="Add" />
-              <Button text="Edit" />
-              <Button text="Remove" />
-            </VBox>
-          </HBox>
+          <ListView fx:id="listTitle" editable="false"/>
         </Tab>
       </tabs>
     </TabPane>
   </center>
+  <right>
+    <VBox alignment="CENTER_RIGHT">
+      <Button text="Add" onAction="#buttonPress"/>
+      <Button text="Edit" onAction="#buttonPress"/>
+      <Button text="Remove" onAction="#buttonPress"/>
+    </VBox>
+  </right>
 </BorderPane>

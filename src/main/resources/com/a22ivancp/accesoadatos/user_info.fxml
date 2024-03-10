@@ -13,54 +13,54 @@
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.ListView?>
+
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.ToggleButton?>
 <VBox alignment="CENTER" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/17.0.2-ea" fx:controller="com.a22ivancp.accesoadatos.ControllerUser">
-  <HBox>
-    <ImageView fx:id="pictureUser" fitHeight="150" fitWidth="150"/>
-    <VBox alignment="CENTER" >
-      <GridPane >
-        <Label text="Name:" GridPane.columnIndex="0" GridPane.rowIndex="0" />
-        <TextField GridPane.columnIndex="1" GridPane.rowIndex="0" />
+  <HBox alignment="CENTER" spacing="20">
+    <ImageView fx:id="pictureUser" fitHeight="150" fitWidth="150" />
+    <GridPane alignment="CENTER" hgap="20" vgap="15" >
+      <Label text="Name:" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+      <TextField GridPane.columnIndex="1" GridPane.rowIndex="0" fx:id="textName"/>
 
-        <Label text="Surname:" GridPane.columnIndex="2" GridPane.rowIndex="0" />
-        <TextField GridPane.columnIndex="3" GridPane.fillWidth="2" GridPane.rowIndex="0" />
+      <Label text="Surname:" GridPane.columnIndex="2" GridPane.rowIndex="0" />
+      <TextField GridPane.columnIndex="3" GridPane.fillWidth="2" GridPane.rowIndex="0" fx:id="textSurname"/>
 
-        <Label text="Birthday:" GridPane.columnIndex="0" GridPane.rowIndex="1" />
-        <TextField GridPane.columnIndex="1" GridPane.rowIndex="1" />
+      <Label text="Birthday:" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+      <DatePicker GridPane.columnIndex="1" GridPane.rowIndex="1" fx:id="dateBirth" />
 
-        <Label text="Gender:" GridPane.columnIndex="2" GridPane.rowIndex="1" />
-        <ComboBox GridPane.columnIndex="3" GridPane.rowIndex="1" />
+      <Label text="Gender:" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+      <ComboBox GridPane.columnIndex="3" GridPane.rowIndex="1" fx:id="genderOption"/>
 
-        <Label text="DNI:" GridPane.columnIndex="4" GridPane.rowIndex="1" />
-        <TextField GridPane.columnIndex="5" GridPane.rowIndex="1" />
+      <Label text="DNI:" GridPane.columnIndex="4" GridPane.rowIndex="1" />
+      <TextField GridPane.columnIndex="5" GridPane.rowIndex="1" fx:id="textDNI"/>
 
-        <Label text="Gmail:" GridPane.columnIndex="0" GridPane.rowIndex="2" />
-        <TextField GridPane.columnIndex="1" GridPane.rowIndex="2" />
+      <Label text="Gmail:" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+      <TextField GridPane.columnIndex="1" GridPane.rowIndex="2" fx:id="textGmail"/>
 
-        <Label text="Mobile Phone:" GridPane.columnIndex="2" GridPane.rowIndex="2" />
-        <TextField GridPane.columnIndex="3" GridPane.rowIndex="2" />
+      <Label text="Mobile Phone:" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+      <TextField GridPane.columnIndex="3" GridPane.rowIndex="2" fx:id="textPhone" />
 
-        <Label text="Country:" GridPane.columnIndex="0" GridPane.rowIndex="3" />
-        <TextField GridPane.columnIndex="1" GridPane.rowIndex="3" />
+      <Label text="Country:" GridPane.columnIndex="0" GridPane.rowIndex="3" />
+      <TextField GridPane.columnIndex="1" GridPane.rowIndex="3" fx:id="country"/>
 
-        <Label text="Province:" GridPane.columnIndex="2" GridPane.rowIndex="3" />
-        <TextField GridPane.columnIndex="3" GridPane.rowIndex="3" />
+      <Label text="Province:" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+      <TextField GridPane.columnIndex="3" GridPane.rowIndex="3" fx:id="province"/>
 
-        <Label text="City:" GridPane.columnIndex="0" GridPane.rowIndex="4" />
-        <TextField GridPane.columnIndex="1" GridPane.rowIndex="4" />
+      <Label text="City:" GridPane.columnIndex="0" GridPane.rowIndex="4" />
+      <TextField GridPane.columnIndex="1" GridPane.rowIndex="4" fx:id="city"/>
 
-        <Label text="Street:" GridPane.columnIndex="2" GridPane.rowIndex="4" />
-        <TextField GridPane.columnIndex="3" GridPane.rowIndex="4" />
+      <Label text="Street:" GridPane.columnIndex="2" GridPane.rowIndex="4" />
+      <TextField GridPane.columnIndex="3" GridPane.rowIndex="4" fx:id="street"/>
 
-        <Label text="Door:" GridPane.columnIndex="4" GridPane.rowIndex="4" />
-        <TextField GridPane.columnIndex="5" GridPane.rowIndex="4" />
+      <Label text="Door:" GridPane.columnIndex="4" GridPane.rowIndex="4" />
+      <TextField GridPane.columnIndex="5" GridPane.rowIndex="4" fx:id="door"/>
 
-      </GridPane>
-      <Button text="Edit" prefWidth="200"/>
-    </VBox>
+    </GridPane>
   </HBox>
   <Label text="LISTA DE TITULOS:"/>
-  <HBox>
-    <ListView />
+  <HBox alignment="CENTER" spacing="20">
+    <ListView fx:id="listTitles" prefWidth="500"/>
     <VBox>
       <Button text="Add" />
       <Button text="Edit" />

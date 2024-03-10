@@ -2,7 +2,6 @@ package com.a22ivancp.accesoadatos.model.dao;
 
 import com.a22ivancp.accesoadatos.model.JPAUtils;
 import com.a22ivancp.accesoadatos.model.entities.StudentTitles;
-import com.a22ivancp.accesoadatos.model.entities.Subject;
 import jakarta.persistence.EntityManager;
 
 import java.util.List;
@@ -19,7 +18,7 @@ public class DAOStudentTitle implements DAO<StudentTitles> {
 
     @Override
     public List<StudentTitles> getAll() {
-        return em.createQuery("SELECT * FROM StudentTitles", StudentTitles.class).getResultList();
+        return em.createQuery("SELECT st FROM StudentTitles st", StudentTitles.class).getResultList();
     }
 
     @Override

@@ -1,9 +1,11 @@
 package com.a22ivancp.accesoadatos.model.dao;
 
 import com.a22ivancp.accesoadatos.model.JPAUtils;
+import com.a22ivancp.accesoadatos.model.dto.DTOTitle;
 import com.a22ivancp.accesoadatos.model.entities.Title;
 import jakarta.persistence.EntityManager;
-import javafx.scene.layout.TilePane;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 
 import java.util.List;
 
@@ -19,7 +21,7 @@ public class DAOTitle implements DAO<Title>{
 
     @Override
     public List<Title> getAll() {
-        return em.createQuery("SELECT * FROM Title", Title.class).getResultList();
+        return em.createQuery("SELECT t FROM Title t", Title.class).getResultList();
     }
 
     @Override
@@ -54,5 +56,13 @@ public class DAOTitle implements DAO<Title>{
                 break;
             }
         }
+    }
+    public ObservableList<DTOTitle> getAllDTOTitles(){
+        List<Title> titles = getAll();
+        ObservableList<DTOTitle> list = FXCollections.observableArrayList();
+        for (Title title : titles){
+            list.add(new DTOTitle(title));
+        }
+        return list;
     }
 }

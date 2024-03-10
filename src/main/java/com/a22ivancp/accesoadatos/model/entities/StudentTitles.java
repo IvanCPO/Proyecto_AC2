@@ -28,4 +28,14 @@ public class StudentTitles {
     @Column(nullable = true)
     private Integer yearEnd;
     private boolean isNow;
+
+    @Override
+    public String toString() {
+        return "StudentTitles{" +
+                "title=" + title +
+                ", yearStart=" + yearStart +
+                ", yearEnd=" + yearEnd +
+                ", isNow=" + isNow +
+                '}';
+    }
 }

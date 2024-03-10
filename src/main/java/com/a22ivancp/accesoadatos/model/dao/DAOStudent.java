@@ -1,9 +1,13 @@
 package com.a22ivancp.accesoadatos.model.dao;
 
 import com.a22ivancp.accesoadatos.model.JPAUtils;
+import com.a22ivancp.accesoadatos.model.dto.DTOStudent;
+import com.a22ivancp.accesoadatos.model.dto.DTOUserTitle;
 import com.a22ivancp.accesoadatos.model.entities.Student;
 import com.a22ivancp.accesoadatos.model.entities.StudentTitles;
 import jakarta.persistence.EntityManager;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 
 import java.util.List;
 
@@ -19,7 +23,7 @@ public class DAOStudent implements DAO<Student> {
 
     @Override
     public List<Student> getAll() {
-        return em.createQuery("SELECT * FROM Student", Student.class).getResultList();
+        return em.createQuery("SELECT s FROM Student s", Student.class).getResultList();
     }
 
     @Override
@@ -55,4 +59,20 @@ public class DAOStudent implements DAO<Student> {
             }
         }
     }
+    public ObservableList<DTOStudent> getAllDTOStudents(){
+        List<Student> students = getAll();
+        ObservableList<DTOStudent> list = FXCollections.observableArrayList();
+        for (Student student : students){
+            list.add(new DTOStudent(student));
+        }
+        return list;
+    }
+    public ObservableList<DTOUserTitle> getAllDTOUserTitles(Student student){
+        ObservableList<DTOUserTitle> list = FXCollections.observableArrayList();
+        for (StudentTitles studentTitle : student.getTitles()){
+            list.add(new DTOUserTitle(studentTitle));
+        }
+        return list;
+    }
+
 }
